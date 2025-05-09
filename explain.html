@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch API - Currency Converter</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: gainsboro;
+
+        }
+        section{
+            border: 2px solid rgb(21, 16, 92);
+            border-radius: 6PX;
+            margin-left: 350px;
+            margin-right: 350px;
+            padding-bottom: 60px;
+            margin-top: 200px;
+            background-color: rgb(251, 252, 251);
+        }
+        
+        .input1{
+            border: 2px solid black;
+            height: 40px;
+            border-radius: 5px;
+            padding-left: 10px;
+            background-color: gainsboro; 
+            color: black;
+            font-size: large;
+        }
+        .input2{
+
+            border: 1px solid white;
+            height: 40px;
+            border-radius: 5px;
+            background-color: rgb(92, 16, 16) ;
+            color: white;
+            font-size: large;
+        }
+        .div1{
+            
+            padding: 50px;
+            margin-left: 100px;
+            margin-right: 100px;
+            background-color: gainsboro;
+            color: black;
+            font-size: medium;
+        }
+        h1{
+            border: 1px solid black;
+            padding: 10px;
+            margin-left: 100px;
+            margin-right: 100px;
+            background-color: rgb(109, 82, 104);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+
+    <h1>G2H Currency Converter</h1>
+
+    <!-- A simple form with an input for amount and a button -->
+    <form>
+        <!-- Input field to enter amount in dollars -->
+        <input type="number" id="amount" class="input1" placeholder="Enter amount in USD">
+
+        <!-- Button to check the current exchange rate -->
+        <input type="button" class="input2" value="Check Rate" id="check">
+    </form>
+  <br>
+  <br>
+    <!-- Area where the results will be displayed -->
+    <div id="result" class="div1">
+        <div id="dollar"></div>
+        <div id="naira"></div>
+    </div>
+</section>
+    <!-- JavaScript section starts here -->
+    <script>
+        // Get the button element
+        let btn = document.querySelector("#check");
+
+        // Add a click event to the button
+        btn.addEventListener("click", (e) => {
+            // Prevent the form from reloading the page
+            e.preventDefault();
+
+            // Get the amount entered by the user
+            let amount = document.getElementById("amount").value;
+
+            // Fetch the latest exchange rates for USD
+            fetch("https://open.er-api.com/v6/latest/USD")
+                .then((response) => response.json()) // Convert response to JSON
+                .then((data) => {
+                    // Show the amount in dollars
+                    document.getElementById("dollar").innerText = `USD: $${amount}`;
+
+                    // Multiply the amount by the current USD to NGN rate
+                    let nairaAmount = data.rates.NGN * amount;
+
+                    // Show the amount in Naira, rounded to 2 decimal places
+                    document.getElementById("naira").innerText = `NGN: ₦${nairaAmount.toFixed(2)}`;
+                })
+                .catch((error) => {
+                    // In case something goes wrong
+                    console.error("Error fetching data:", error);
+                    document.getElementById("naira").innerText = "Could not fetch exchange rate.";
+                });
+        });
+    </script>
+</body>
+</html>
