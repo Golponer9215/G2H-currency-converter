@@ -1,50 +1,81 @@
-body{
+body {
     text-align: center;
     background-color: gainsboro;
-
+    margin: 0;
+    font-family: sans-serif;
 }
-section{
+
+section {
     border: 2px solid rgb(21, 16, 92);
-    border-radius: 6PX;
-    margin-left: 350px;
-    margin-right: 350px;
+    border-radius: 6px;
+    margin: 10% auto;
     padding-bottom: 60px;
-    margin-top: 200px;
+    padding: 20px;
     background-color: rgb(251, 252, 251);
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
-.input1{
+.input1 {
     border: 2px solid black;
     height: 40px;
     border-radius: 5px;
     padding-left: 10px;
     background-color: gainsboro; 
     color: black;
-    font-size: large;
+    font-size: 1rem;
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: block;
 }
-.input2{
 
+.input2 {
     border: 1px solid white;
     height: 40px;
     border-radius: 5px;
-    background-color: rgb(92, 16, 16) ;
+    background-color: rgb(92, 16, 16);
     color: white;
-    font-size: large;
+    font-size: 1rem;
+    width: 20%;
+    max-width: 400px;
+    display: block;
+    margin-left: 200px;
 }
-.div1{
-    
-    padding: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
+
+.div1 {
+    padding: 30px 5%;
     background-color: gainsboro;
     color: black;
-    font-size: medium;
+    font-size: 1rem;
 }
-h1{
+
+h1 {
     border: 1px solid black;
     padding: 10px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 0 auto 20px auto;
     background-color: rgb(109, 82, 104);
     color: aliceblue;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+/* Optional: Improve layout on very small screens */
+@media screen and (max-width: 480px) {
+    .input1, .input2 {
+        font-size: 0.9rem;
+        height: 36px;
+    }
+
+    .div1 {
+        font-size: 0.9rem;
+        padding: 20px 5%;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
 }
