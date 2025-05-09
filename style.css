@@ -1,0 +1,50 @@
+body{
+    text-align: center;
+    background-color: gainsboro;
+
+}
+section{
+    border: 2px solid rgb(21, 16, 92);
+    border-radius: 6PX;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding-bottom: 60px;
+    margin-top: 200px;
+    background-color: rgb(251, 252, 251);
+}
+
+.input1{
+    border: 2px solid black;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: gainsboro; 
+    color: black;
+    font-size: large;
+}
+.input2{
+
+    border: 1px solid white;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(92, 16, 16) ;
+    color: white;
+    font-size: large;
+}
+.div1{
+    
+    padding: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: gainsboro;
+    color: black;
+    font-size: medium;
+}
+h1{
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: rgb(109, 82, 104);
+    color: aliceblue;
+}
